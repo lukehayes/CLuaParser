@@ -26,9 +26,33 @@ int main()
     {
         if(*c == '{')
         {
+
+            char keyBuffer[100];
+            int keyCounter = 0;
+
+            char valBuffer[100];
+            int bufCounter = 0;
+
             char* current = c;
-            printf("Start Parse \n");
-            printf("Next Char: %c \n", *(c + 2));
+
+            printf("Pre Current: %c \n", *current);
+
+            while(!isalpha(*current))
+            {
+                current++;
+            }
+
+            while(isalpha(*current))
+            {
+                keyBuffer[keyCounter] = *current;
+                keyCounter++;
+                current++;
+            }
+            keyCounter = 0;
+
+            printf("Key: %s \n", keyBuffer);
+
+            printf("Post Current: %c \n", *current);
         }
 
 
